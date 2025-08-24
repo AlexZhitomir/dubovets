@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="img/icon/logo-1.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Дубовець</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a class="logo" href="#">
+            <img src="img/icon/dubovets.png" alt="" width="80" />
+          </a>
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#" class="menu__link">новини</a>
+              </li>
+              <li class="menu__item">
+                <a href="board.html" class="menu__link">оголошення</a>
+              </li>
+              <li class="menu__item">
+                <a href="#documents" class="menu__link">документи</a>
+              </li>
+              <li class="menu__item">
+                <a href="#admin" class="menu__link">органи управління</a>
+              </li>
+              <li class="menu__item">
+                <a href="#map" class="menu__link">карта</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#" class="header__contacts">контакти</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="about">
+        <div class="container-big">
+          <div class="about__name">
+            <h1 class="about__title">
+              садівницьке товариство
+              <p>"дубовець"</p>
+            </h1>
+            <p class="about__text">маленька праця краща за велике безділля</p>
+          </div>
+          <dl class="about__stat">
+            <div class="about__stat-item">
+              <dt>59,0 га</dt>
+              <dd>площа товариства</dd>
+            </div>
+            <div class="about__stat-item">
+              <dt>300 +</dt>
+              <dd>членів товариства</dd>
+            </div>
+            <div class="about__stat-item">
+              <dt>100 +</dt>
+              <dd>підключено до електромережі</dd>
+            </div>
+            <div class="about__stat-item">
+              <dt>50 +</dt>
+              <dd>підключено до газової мережі</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!--ВНЕСКИ -->
+      <div class="container">
+        <div class="pay">
+          <h3 class="list">внески</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>назва</th>
+                <th>розмір</th>
+                <th>термін сплати</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>членський внесок</td>
+                <td>50 грн / сотку - щорічно</td>
+                <td>
+                  за перше півріччя - до 30 березня <br />за друге півріччя - до
+                  30 вересня
+                </td>
+              </tr>
+              <tr>
+                <td>вступний внесок</td>
+                <td>1000 грн - разово</td>
+                <td>при прийнятті в члени товариства</td>
+              </tr>
+              <tr>
+                <td>цільовий внесок на розвиток Товариства</td>
+                <td>300 грн - разово</td>
+                <td>при прийнятті в члени товариства</td>
+              </tr>
+              <tr>
+                <td>внесок за переоформлення земельних ділянок</td>
+                <td>
+                  100 грн - разово<br />
+                  -0 грн - між родичами (спадкоємцями)-
+                </td>
+                <td>при поданні відповідної заяви про переоформлення</td>
+              </tr>
+              <tr>
+                <td>плата за підключення до енергомережі</td>
+                <td>
+                  350 грн (однофазний) <br />
+                  700 грн (трьохфазний)
+                </td>
+                <td>при поданні відповідної заяви</td>
+              </tr>
+              <tr>
+                <td>за утримання КТП та техобслуговування</td>
+                <td>150 грн - щорічно</td>
+                <td>до 01 квітня</td>
+              </tr>
+              <tr>
+                <td>за втрати по трансформатору</td>
+                <td>80 грн - щорічно</td>
+                <td>до 01 квітня</td>
+              </tr>
+              <tr>
+                <td>оплата за електроенергію</td>
+                <td>4,32 грн з ПДВ / 1 кВт</td>
+                <td>до 5-го числа наступного за звітним місяцем</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="bank">
+            <img src="img/rekv.png" alt="QR-код" width="800" height="400" />
+            <img src="img/pay.svg" alt="QR-код" width="400" height="400" />
+          </div>
+        </div>
+      </div>
+
+      <!--ДОШКА ОГОЛОШЕНЬ -->
+      <section class="board">
+        <div class="container">
+          <h3 class="board__title">
+            <a href="board.html">дошка оголошень</a>
+          </h3>
+          <h4 class="board__about">
+            Тут ви можете передивитись оголошення, які створили садоводи
+          </h4>
+
+          <a href="board.html">
+            <div class="pred__board">
+              <img class="tabs__img" src="/img/board/cell-1.png" alt="" />
+              <img class="tabs__img" src="/img/board/cell-2.png" alt="" />
+              <img class="tabs__img" src="/img/board/cell-3.png" alt="" />
+              <img class="tabs__img" src="/img/board/cell-4.png" alt="" />
+              <img class="tabs__img" src="/img/board/cell-5.png" alt="" />
+              <img class="tabs__img" src="/img/board/cell-6.png" alt="" />
+              <img class="tabs__img" src="/img/board/cell-7.png" alt="" />
+              <img class="tabs__img" src="/img/board/cell-8.png" alt="" />
+              <img class="tabs__img" src="/img/board/cell-9.png" alt="" />
+              <img class="tabs__img" src="/img/board/cell-10.png" alt="" />
+              <img class="tabs__img" src="/img/board/cell-11.png" alt="" />
+              <img class="tabs__img" src="/img/board/cell-12.png" alt="" />
+              <img class="tabs__img" src="/img/board/cell-13.png" alt="" />
+              <img class="tabs__img" src="/img/board/cell-14.png" alt="" />
+            </div>
+          </a>
+          <h4 class="board__about">
+            З питань розміщення оголошення звертайтесь за телефоном
+            097-250-84-33
+          </h4>
+        </div>
+      </section>
+
+      <!--ДОКУМЕНТИ -->
+      <div class="container">
+        <section class="documents">
+          <h3 id="documents" class="list">документи</h3>
+          <div class="documents__list">
+            <div class="documents__item">
+              <h4 class="documents__name">статут</h4>
+              <a class="documents__img" href="#!">
+                <img
+                  src="/img/doc/statut.png"
+                  alt="статут"
+                  style="width: 100%"
+                />
+              </a>
+            </div>
+
+            <div class="documents__item">
+              <h4 class="documents__name">правила товариства</h4>
+              <a class="documents__img" href="#!">
+                <img
+                  src="/img/doc/rules.png"
+                  alt="правила"
+                  style="width: 100%"
+                />
+              </a>
+            </div>
+
+            <div class="documents__item">
+              <h4 class="documents__name">правила енергогосподарства</h4>
+              <a class="documents__img" href="#!">
+                <img
+                  src="/img/doc/electric.png"
+                  alt="правила електрик"
+                  style="width: 100%"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!--ОРГАНИ УПРАВЛІННЯ -->
+      <div class="container">
+        <h3 id="admin" class="title">органи управління</h3>
+        <div class="people">
+          <div class="people__item">
+            <img
+              class="people__icon"
+              src="/img/icon/admin.png"
+              alt="Адміністрація"
+            />
+            <h4 class="people__title">Адміністрація</h4>
+            <div class="people__text">
+              <h3 class="people__position">голова правління</h3>
+              <p>
+                <span class="people__name"> Ілляшенко </span> Олександр
+                Анатолійович
+              </p>
+              <p>
+                <span class="people__telephone"> телефон: </span> 097-250-84-33
+              </p>
+
+              <div class="social">
+                <a
+                  class="social__item"
+                  href="https://www.facebook.com/profile.php?id=100001337059601"
+                >
+                  <img src="/img/icon/fb.svg" height="24px" alt="facebook" />
+                </a>
+
+                <a class="social__item" href="#">
+                  <img src="/img/icon/viber.svg" height="24px" alt="viber" />
+                </a>
+
+                <a class="social__item" href="#">
+                  <img src="/img/icon/mail.svg" height="24px" alt="mail" />
+                </a>
+              </div>
+
+              <br />
+              <h3 class="people__position">бухгалтер</h3>
+              <p>
+                <span class="people__name"> Павицька </span> Регіна Домініківна
+              </p>
+              <p>
+                <span class="people__telephone"> телефон: </span> 098-088-19-26
+              </p>
+              <br />
+
+              <h3 class="people__position">електрик</h3>
+              <p>
+                <span class="people__name"> Галманов </span> Олександр
+                Сергійович
+              </p>
+              <p>
+                <span class="people__telephone"> телефон: </span> 097-571-68-82
+              </p>
+              <br />
+            </div>
+          </div>
+
+          <div class="people__item">
+            <img
+              class="people__icon"
+              src="/img/icon/rule.png"
+              alt="правління"
+            />
+            <h4 class="people__title">правління</h4>
+            <div class="people__text">
+              <ul>
+                <li>
+                  <p>
+                    <span class="people__name"> Авдіюк О.О.</span> - ділянка 5
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span class="people__name"> Бондарчук О.А.</span> - ділянка
+                    5
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span class="people__name"> Борисюк Микола Григорович</span>
+                    - ділянка 619
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span class="people__name"> Власюк Ярослав Іванович</span>
+                    - ділянка 235
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span class="people__name"> Іць Володимир Васильович</span>
+                    - ділянка 149
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span class="people__name"> Корень Галина Олексіївна </span>
+                    - ділянка 553
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span class="people__name"> Кулик Л.О. </span> - ділянка 347
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="people__name">
+                      Павицька Регіна Домініківна
+                    </span>
+                    - ділянка 545
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="people__name">
+                      Смольницька Олена Василівна
+                    </span>
+                    - ділянка 379
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="people__name">
+                      Томашевський Геннадій Анатолійович
+                    </span>
+                    - ділянка 519
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="people__item">
+            <img
+              class="people__icon"
+              src="/img/icon/revizor.png"
+              alt="ревізійна комісія"
+            />
+            <h4 class="people__title">ревізійна комісія</h4>
+            <div class="people__text">
+              <ul>
+                <li>
+                  <p>
+                    <span class="people__name"
+                      >Костюченко Валентина Ананіївна</span
+                    >
+                  </p>
+                  <address>ділянка 359</address>
+                  <br />
+                </li>
+                <li>
+                  <p>
+                    <span class="people__name"
+                      >Одинецький Анатолій Петрович</span
+                    >
+                  </p>
+                  <address>ділянка 568</address>
+                  <br />
+                </li>
+
+                <li>
+                  <p>
+                    <span class="people__name">
+                      Танська Валентина Олексіївна</span
+                    >
+                  </p>
+                  <address>ділянка 563</address>
+                  <br />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--КАРТА -->
+      <div class="container">
+        <div class="box">
+          <h3 id="map" class="list">карта</h3>
+          <h4 class="board__about">
+            для керування картою нажміть на клавішу мишки
+          </h4>
+          <div class="overlay" onclick="style.pointerEvents='none'"></div>
+          <iframe
+            src="https://maps.visicom.ua/iframe/uk/1300:500/?c/28.42755:50.35250:15/"
+            width="1300"
+            height="500"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="0"
+            loading="lazy"
+            title="карта"
+          ></iframe>
+          <img src="/img/map.jpg" alt="карта" style="width: 100%" />
+        </div>
+      </div>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>
