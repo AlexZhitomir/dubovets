@@ -14,14 +14,19 @@
 }
 
 .header {
-  background-color: #fff8f3;
-  position: sticky;
-  /* width: 100%; */
+  background: linear-gradient(to bottom, #f08beb 0%, #e91e63 100%);
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  padding: 5px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .main {
-  background: #fff8f3;
+  background: #b6a8f0;
+  margin-top: 70px; /* Відступ для фіксованої шапки */
 }
 /* ----стилі контейнера----*/
 .container {
@@ -35,7 +40,7 @@
   justify-content: space-between; /*розтягуємо блоки*/
   align-items: center; /*розміщення по центру вертикалі*/
   font-family: "Montserrat";
-  font-weight: normal;
+  font-weight: 700;
 }
 .menu__list {
   display: flex;
@@ -45,13 +50,17 @@
 .menu__link {
   text-transform: uppercase; /*всі з великої літери*/
   opacity: 0.8;
-  transition: 0.2s linear; /*плавність*/
+  transition: all 0.3s ease; /*плавність для всіх властивостей*/
+  transform: scale(1);
 }
 
 .menu__link:hover {
   color: rgb(0, 100, 200);
   opacity: 1;
   font-weight: 800;
+  font-size: 1.1em;
+  transform: scale(1.05);
+  text-shadow: 0 2px 4px rgba(0, 100, 200, 0.3);
 }
 
 .header__contacts {
@@ -68,6 +77,58 @@
   background-color: #00000044;
   color: rgb(0, 100, 200);
   font-weight: 900;
+}
+
+/* Стилі для логотипу */
+.logo {
+  opacity: 0.7;
+  background: transparent;
+  transition: all 0.4s ease;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1);
+  filter: grayscale(0.3);
+}
+
+.logo:hover {
+  opacity: 1;
+  transform: scale(1.1) rotate(5deg);
+  filter: grayscale(0) brightness(1.1);
+  box-shadow: 0 8px 25px rgba(240, 139, 235, 0.4);
+}
+
+.logo:active {
+  transform: scale(0.95) rotate(-2deg);
+  transition: all 0.1s ease;
+}
+
+/* Анімація при завантаженні сторінки */
+.logo {
+  animation: logoAppear 1s ease-out;
+}
+
+@keyframes logoAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-180deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8) rotate(-90deg);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.logo:hover {
+  opacity: 1;
 }
 
 .container-big {
@@ -188,10 +249,304 @@
   display: flex;
   justify-content: center;
 }
+
+/* Стилі для блоку новин */
+.news {
+  margin: 40px 0;
+  padding: 40px 0;
+}
+
+.news__title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: rgb(0, 100, 200);
+  margin-bottom: 40px;
+}
+
+.news__slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.news__track {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 30px;
+}
+
+.news__item {
+  flex: 0 0 300px; /* фіксована ширина елемента */
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.news__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.news__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid rgb(0, 100, 200);
+}
+
+.news__content {
+  padding: 20px;
+}
+
+.news__item-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(0, 100, 200);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.news__item-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.news__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgb(0, 100, 200);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news__btn:hover {
+  background: #000;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.news__btn--prev {
+  left: 20px;
+}
+
+.news__btn--next {
+  right: 20px;
+}
+
+.news__btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: translateY(-50%);
+}
+
+.news__btn:disabled:hover {
+  transform: translateY(-50%);
+  background: #ccc;
+}
+
+/* Стилі карток документів у секції Інші документи (уникнення конфлікту з .news) */
+.docs-card__item {
+  flex: 0 0 300px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.docs-card__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.docs-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.docs-card__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid rgb(0, 100, 200);
+  transition: transform 0.3s ease;
+}
+
+.docs-card__img:hover {
+  transform: scale(2);
+  z-index: 10;
+  position: relative;
+}
+
+.docs-card__content {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.docs-card__item:hover .docs-card__content {
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.docs-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(0, 100, 200);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.docs-card__text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .docs-card__item {
+    flex: 0 0 250px;
+  }
+
+  .docs-card__img {
+    height: 150px;
+  }
+
+  .docs-card__content {
+    padding: 15px;
+  }
+
+  .docs-card__title {
+    font-size: 16px;
+  }
+
+  .docs-card__text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .docs-card__item {
+    flex: 0 0 200px;
+  }
+
+  .docs-card__img {
+    height: 120px;
+  }
+
+  .docs-card__content {
+    padding: 12px;
+  }
+
+  .docs-card__title {
+    font-size: 14px;
+  }
+
+  .docs-card__text {
+    font-size: 12px;
+  }
+}
+
+/* Адаптивність для новин */
+@media (max-width: 768px) {
+  .news__item {
+    flex: 0 0 250px;
+  }
+
+  .news__img {
+    height: 150px;
+  }
+
+  .news__content {
+    padding: 15px;
+  }
+
+  .news__item-title {
+    font-size: 16px;
+  }
+
+  .news__item-text {
+    font-size: 13px;
+  }
+
+  .news__btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .news__btn--prev {
+    left: 10px;
+  }
+
+  .news__btn--next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .news__item {
+    flex: 0 0 200px;
+  }
+
+  .news__img {
+    height: 120px;
+  }
+
+  .news__content {
+    padding: 12px;
+  }
+
+  .news__item-title {
+    font-size: 14px;
+  }
+
+  .news__item-text {
+    font-size: 12px;
+  }
+}
+
 /*========================*/
 
 .board {
   margin: 20px 0;
+}
+
+/* Розтягнути дошку на всю ширину з відступами по 100px */
+.board .container {
+  max-width: 100%;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .board__title {
@@ -204,25 +559,55 @@
 .board__about {
   text-align: center;
   font-size: 20px;
-  padding: 40px;
+  padding: 20px;
   color: rgb(0, 100, 200);
 }
 
 .pred__board {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px; /* збільшений відступ між елементами */
+  justify-items: center;
+  justify-content: center; /* центрування сітки, коли елементів менше 4 в останньому ряду */
+}
+
+/* Стилі для зображень превью дошки оголошень на головній сторінці */
+.board-preview__img {
+  width: 90px; /* збільшений розмір на 50% (60px + 30px) */
+  height: 90px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.board-preview__img:hover {
+  transform: scale(1.1);
+}
+
+/* Розташування 13-го елемента у другій колонці */
+.board-preview__img:nth-child(13) {
+  grid-column: 2;
+}
+
+/* Розташування 14-го елемента у третій колонці */
+.board-preview__img:nth-child(14) {
+  grid-column: 3;
 }
 .tabs {
-  max-width: 1200px; /*макс ширина*/
-  padding: 50px 0;
-  margin: 0 auto; /*відступ збоків однаковий, тобто по центру*/
+  max-width: none; /* без обмеження ширини */
+  padding: 30px 0;
+  margin: 0; /* керуємо відступами контейнером вище */
+  display: grid;
+  grid-template-columns: 420px 1fr; /* ліва панель + основне поле */
+  gap: 60px; /* збільшений відступ між колонками */
 }
 
 .tabs__btn {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr 1fr; /* дві колонки у боковій панелі */
+  gap: 12px;
+  position: sticky;
+  top: 90px; /* з урахуванням фіксованого хедера */
+  align-self: start; /* прилипає до верху колонки */
 }
 
 .tabs__btn-item {
@@ -233,6 +618,12 @@
   background-color: transparent;
   border: 5px solid rgba(0, 100, 200, 1);
   font-size: 18px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
 }
 
 .tabs__btn-item:hover {
@@ -245,28 +636,104 @@
 .tabs__content-item {
   margin: 20px 0;
   display: none;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 100px 40px;
+  grid-template-columns: repeat(5, 1fr); /* максимум 5 колонок */
+  gap: 30px; /* відступ між картками */
+  justify-content: center; /* центрування сітки */
+  justify-items: center; /* центрування елементів в сітці */
 }
 
 .tabs__content-item.tabs__content-item--active {
   display: grid;
 }
 
+/* Розмір іконок у кнопках табів */
+.tabs__img {
+  width: 48px; /* збільшено з 36px */
+  height: 48px; /* збільшено з 36px */
+  object-fit: contain;
+}
+
+/* Адаптив: на вузьких екранах вивести кнопки зверху, контент знизу */
+@media (max-width: 992px) {
+  .tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs__btn {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tabs__btn-item {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .tabs__content-item {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tabs__btn-item {
+    width: 100%;
+  }
+
+  .tabs__content-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Адаптивні стилі для превью дошки оголошень */
+@media (max-width: 768px) {
+  .pred__board {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pred__board {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
 .card {
   text-align: center;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Збільшення при наведенні на картку */
+.card:hover {
+  transform: scale(1.2);
+  z-index: 10;
 }
 
 .card__img {
-  max-height: 100%;
+  width: 100%;
+  height: 150px; /* зменшена висота для менших карток */
   display: block;
   padding: 0 10px;
   border: 2px solid rgb(0, 100, 200);
+  object-fit: contain; /* зберігає пропорції зображення */
 }
 
 .card__content {
   border: 2px solid rgb(0, 100, 200);
   border-top: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .card__title {
   padding-top: 20px;
@@ -298,15 +765,150 @@
 .documents__list {
   margin: 60px auto;
   display: flex;
-  align-items: center;
+  align-items: stretch; /* розтягуємо елементи на всю висоту */
 }
 
 .documents__item {
   width: 33.333333%;
   padding: 0 40px;
   text-align: center;
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: relative;
+  min-height: 400px; /* мінімальна висота для однакового розміру */
+}
+
+/* Стилі для прозорих блоків документів */
+.documents__item {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgb(0, 100, 200);
+  border-radius: 15px;
+  padding: 30px 20px;
+  margin: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 100, 200, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 150px;
+}
+
+.documents__item:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 100, 200, 0.2);
+  border-color: #000;
+}
+
+.documents__name {
+  opacity: 1 !important;
+  position: static !important;
+  transform: none !important;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(0, 100, 200);
+  margin-bottom: 20px;
+  line-height: 1.3;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Стилі для кнопки скачування в блоках документів */
+.documents__item .download-btn {
+  margin-top: auto;
+  align-self: center;
+}
+
+/* Стилі для секцій документів */
+.documents-section {
+  margin-bottom: 60px;
+}
+
+.documents-section__title {
+  font-size: 28px;
+  font-weight: 700;
+  color: rgb(0, 100, 200);
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Стилі для слайдерів документів */
+.documents__slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+
+.documents__track {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 30px;
+}
+
+.documents__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgb(0, 100, 200);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.documents__btn:hover {
+  background: #000;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.documents__btn--prev {
+  left: 20px;
+}
+
+.documents__btn--next {
+  right: 20px;
+}
+
+.documents__btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: translateY(-50%);
+}
+
+.documents__btn:disabled:hover {
+  transform: translateY(-50%);
+  background: #ccc;
+}
+
+/* Адаптивність для слайдерів документів */
+@media (max-width: 768px) {
+  .documents__btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .documents__btn--prev {
+    left: 10px;
+  }
+
+  .documents__btn--next {
+    right: 10px;
+  }
 }
 
 .documents__name {
@@ -316,15 +918,173 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 700;
-  font-size: 42px;
+  font-size: 30px;
   text-align: center;
   transition: all 0.4s;
   color: rgb(255, 0, 0);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .documents__item:hover .documents__name {
   opacity: 1;
   top: -10%;
+}
+
+/* Стилі для кнопки завантаження в блоках документів на головній сторінці */
+.documents__item .download-btn {
+  margin-top: auto;
+  align-self: center;
+}
+
+/* Стилі для зображень документів на головній сторінці */
+.documents__img {
+  margin-bottom: 20px; /* відступ знизу від кнопки */
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  min-width: 130px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.download-btn:hover::before {
+  left: 100%;
+}
+
+.download-btn:hover {
+  background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+}
+
+.download-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+}
+
+/* Стилі для SVG іконок у кнопках */
+.download-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.download-btn:hover svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.download-btn:active svg {
+  transform: scale(0.95);
+}
+
+/* Анімація для SVG при наведенні */
+.download-btn:hover svg path {
+  animation: svgGlow 0.6s ease-in-out;
+}
+
+@keyframes svgGlow {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3) drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+/* Стилі для кнопки карти */
+.map-download-container {
+  position: relative;
+}
+
+.map-download-btn-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* Адаптивність для кнопок */
+@media (max-width: 768px) {
+  .download-btn {
+    min-width: 100px;
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .download-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .map-download-btn-wrapper {
+    top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .download-btn {
+    min-width: 90px;
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .download-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .map-download-btn-wrapper {
+    top: 10px;
+  }
 }
 
 .title {
@@ -399,6 +1159,11 @@
   display: inline-block;
 }
 
+.map-container {
+  position: relative;
+  display: inline-block;
+}
+
 .overlay {
   background: transparent;
   position: relative;
@@ -406,4 +1171,29 @@
   height: 550px;
   top: 550px;
   margin-top: -550px;
+}
+
+.map-overlay-text {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  text-align: center;
+  z-index: 100;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Стилі для плавного переходу до розділів */
+html {
+  scroll-behavior: smooth;
+}
+
+.section-anchor {
+  scroll-margin-top: 70px; /* Відступ зверху з урахуванням висоти шапки */
 }
