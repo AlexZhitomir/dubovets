@@ -140,7 +140,7 @@
 
 .about__name {
   text-align: center;
-  background: url(img/background.png);
+  background: url(../img/background.png);
   border-radius: 20px;
   -webkit-background-size: cover;
   background-size: cover;
