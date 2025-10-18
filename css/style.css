@@ -14,8 +14,9 @@
 }
 
 .header {
-  background: linear-gradient(to bottom, #f08beb 0%, #e91e63 100%);
-  position: absolute; /* ----було fixed----*/
+  background: #3c7481;
+
+  position: fixed; /* завжди закріплений зверху */
   top: 0;
   left: 0;
   right: 0;
@@ -25,7 +26,7 @@
 }
 
 .main {
-  background: #b6a8f0;
+  background: #c4dfe6;
   margin-top: 70px; /* Відступ для фіксованої шапки */
 }
 /* ----стилі контейнера----*/
@@ -52,15 +53,16 @@
   opacity: 0.8;
   transition: all 0.3s ease; /*плавність для всіх властивостей*/
   transform: scale(1);
+  color: white;
 }
 
 .menu__link:hover {
-  color: rgb(0, 100, 200);
+  color: rgb(23, 249, 2);
   opacity: 1;
   font-weight: 800;
   font-size: 1.1em;
   transform: scale(1.05);
-  text-shadow: 0 2px 4px rgba(0, 100, 200, 0.3);
+  text-shadow: 0 2px 4px rgba(60, 116, 129, 0.3);
 }
 
 .header__contacts {
@@ -75,7 +77,7 @@
 
 .header__contacts:hover {
   background-color: #00000044;
-  color: rgb(0, 100, 200);
+  color: rgb(23, 249, 2);
   font-weight: 900;
 }
 
@@ -237,7 +239,7 @@
   text-align: center;
   font-size: 40px;
   text-transform: uppercase;
-  color: rgb(0, 100, 200);
+  color: #3c7481;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -256,7 +258,7 @@
 }
 
 .table thead {
-  background-color: rgb(0, 100, 200);
+  background-color: #3c7481;
   font-weight: 800;
   font-size: 20px;
   color: white;
@@ -295,7 +297,7 @@
   font-family: "Montserrat", sans-serif;
   font-size: 40px;
   text-transform: uppercase;
-  color: rgb(0, 100, 200);
+  color: #3c7481;
   margin-bottom: 40px;
 }
 
@@ -336,7 +338,7 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-bottom: 3px solid rgb(0, 100, 200);
+  border-bottom: 3px solid #3c7481;
 }
 
 .news__content {
@@ -346,7 +348,7 @@
 .news__item-title {
   font-size: 18px;
   font-weight: 700;
-  color: rgb(0, 100, 200);
+  color: #3c7481;
   margin-bottom: 10px;
   line-height: 1.3;
 }
@@ -362,7 +364,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgb(0, 100, 200);
+  background: #3c7481;
   color: white;
   border: none;
   width: 50px;
@@ -379,7 +381,7 @@
 }
 
 .news__btn:hover {
-  background: #000;
+  background: #2d5a63;
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -428,7 +430,7 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-bottom: 3px solid rgb(0, 100, 200);
+  border-bottom: 3px solid #3c7481;
   transition: transform 0.3s ease;
 }
 
@@ -455,7 +457,7 @@
 .docs-card__title {
   font-size: 18px;
   font-weight: 700;
-  color: rgb(0, 100, 200);
+  color: #3c7481;
   margin-bottom: 10px;
   line-height: 1.3;
 }
@@ -508,6 +510,16 @@
 
   .docs-card__text {
     font-size: 12px;
+  }
+
+  /* На дуже маленьких екранах - по 1 об'єкт в рядок */
+  .documents__track {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .documents__item {
+    max-width: 100%;
   }
 }
 
@@ -588,13 +600,13 @@
   font-family: "Montserrat", sans-serif;
   font-size: 40px;
   text-transform: uppercase;
-  color: rgb(0, 100, 200);
+  color: #3c7481;
 }
 .board__about {
   text-align: center;
   font-size: 20px;
   padding: 20px;
-  color: rgb(0, 100, 200);
+  color: #3c7481;
 }
 
 .pred__board {
@@ -650,7 +662,7 @@
   cursor: pointer;
   border-radius: 10px;
   background-color: transparent;
-  border: 5px solid rgba(0, 100, 200, 1);
+  border: 5px solid #3c7481;
   font-size: 18px;
   width: 100%;
   text-align: left;
@@ -661,8 +673,8 @@
 }
 
 .tabs__btn-item:hover {
-  background-color: rgba(0, 100, 200, 0.2);
-  border: 5px solid #000;
+  background-color: rgba(60, 116, 129, 0.2);
+  border: 5px solid #2d5a63;
   font-weight: 900;
   font-size: 18px;
 }
@@ -757,12 +769,12 @@
   height: 150px; /* зменшена висота для менших карток */
   display: block;
   padding: 0 10px;
-  border: 2px solid rgb(0, 100, 200);
+  border: 2px solid #3c7481;
   object-fit: contain; /* зберігає пропорції зображення */
 }
 
 .card__content {
-  border: 2px solid rgb(0, 100, 200);
+  border: 2px solid #3c7481;
   border-top: 0;
   flex: 1;
   display: flex;
@@ -787,7 +799,7 @@
 }
 .card__link {
   display: block;
-  border: 2px solid rgb(0, 100, 200);
+  border: 2px solid #3c7481;
   border-top: 0;
 }
 
@@ -815,12 +827,12 @@
 /* Стилі для прозорих блоків документів */
 .documents__item {
   background: rgba(255, 255, 255, 0.9);
-  border: 2px solid rgb(0, 100, 200);
+  border: 2px solid #3c7481;
   border-radius: 15px;
   padding: 30px 20px;
   margin: 10px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 100, 200, 0.1);
+  box-shadow: 0 4px 15px rgba(60, 116, 129, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -830,7 +842,7 @@
 .documents__item:hover {
   background: rgba(255, 255, 255, 1);
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 100, 200, 0.2);
+  box-shadow: 0 8px 25px rgba(60, 116, 129, 0.2);
   border-color: #000;
 }
 
@@ -840,7 +852,7 @@
   transform: none !important;
   font-size: 18px;
   font-weight: 700;
-  color: rgb(0, 100, 200);
+  color: #3c7481;
   margin-bottom: 20px;
   line-height: 1.3;
   flex-grow: 1;
@@ -863,7 +875,7 @@
 .documents-section__title {
   font-size: 28px;
   font-weight: 700;
-  color: rgb(0, 100, 200);
+  color: #3c7481;
   text-align: center;
   margin-bottom: 30px;
   text-transform: uppercase;
@@ -888,7 +900,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgb(0, 100, 200);
+  background: #3c7481;
   color: white;
   border: none;
   width: 50px;
@@ -905,7 +917,7 @@
 }
 
 .documents__btn:hover {
-  background: #000;
+  background: #2d5a63;
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -942,6 +954,19 @@
 
   .documents__btn--next {
     right: 10px;
+  }
+
+  /* Розміщення по 2 об'єкти в рядок на мобільних пристроях */
+  .documents__track {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .documents__item {
+    width: 100%;
+    max-width: 300px;
   }
 }
 
@@ -984,7 +1009,7 @@
   justify-content: center;
   gap: 8px;
   padding: 12px 24px;
-  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  background: #3c7481;
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -997,7 +1022,7 @@
   letter-spacing: 0.5px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 4px 15px rgba(60, 116, 129, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -1023,19 +1048,19 @@
 }
 
 .download-btn:hover {
-  background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+  background: #2d5a63;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+  box-shadow: 0 6px 20px rgba(60, 116, 129, 0.4);
 }
 
 .download-btn:active {
   transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 2px 10px rgba(60, 116, 129, 0.3);
 }
 
 .download-btn:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 0 0 3px rgba(60, 116, 129, 0.3);
 }
 
 /* Стилі для SVG іконок у кнопках */
@@ -1127,7 +1152,7 @@
   font-size: 40px;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
-  color: rgb(0, 100, 200);
+  color: #3c7481;
 }
 
 .people {
@@ -1153,7 +1178,7 @@
 
 .people__title {
   font-size: 20px;
-  color: rgb(0, 100, 200);
+  color: #3c7481;
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 10px;
@@ -1162,7 +1187,7 @@
 .people__position {
   font-size: 20px;
   font-weight: 700;
-  text-decoration: underline rgb(0, 100, 200);
+  text-decoration: underline #3c7481;
 }
 .people__name {
   font-weight: 700;
@@ -1229,7 +1254,7 @@ html {
 }
 
 .section-anchor {
-  scroll-margin-top: 70px; /* Відступ зверху з урахуванням висоти шапки */
+  scroll-margin-top: 80px; /* Відступ зверху з урахуванням висоти фіксованої шапки */
 }
 /* Мобільні стилі для меню */
 @media (max-width: 992px) {
@@ -1318,8 +1343,10 @@ html {
   }
   .documents__list {
     margin: 10px auto;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
   }
   .documents__name {
     font-size: 14px;
@@ -1357,6 +1384,12 @@ html {
   .tabs__btn-item {
     display: ruby;
   }
+
+  /* На дуже маленьких екранах - по 1 об'єкт в рядок для documents__list */
+  .documents__list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1368,7 +1401,7 @@ html {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(6px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    border-bottom: 2px solid rgba(0, 100, 200, 0.2);
+    border-bottom: 2px solid rgba(60, 116, 129, 0.2);
     display: none; /* приховано за замовчуванням */
   }
 
