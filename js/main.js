@@ -148,3 +148,89 @@ function initDocumentsSliders() {
 
 // Ініціалізуємо слайдери документів при завантаженні
 document.addEventListener('DOMContentLoaded', initDocumentsSliders);
+
+// Бургер-меню
+document.addEventListener('DOMContentLoaded', function () {
+  const burgerButton = document.querySelector('.header__burger');
+  const menu = document.querySelector('.menu');
+
+  if (!burgerButton || !menu) return;
+
+  burgerButton.addEventListener('click', function () {
+    const isOpen = menu.classList.toggle('is-open');
+    burgerButton.classList.toggle('is-active', isOpen);
+    burgerButton.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Закривати меню при кліку на посилання
+  menu.addEventListener('click', function (e) {
+    const target = e.target;
+    if (target && target.matches('.menu__link')) {
+      menu.classList.remove('is-open');
+      burgerButton.classList.remove('is-active');
+      burgerButton.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Скидання стану при розширенні екрану понад брейкпоінт
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) {
+      menu.classList.remove('is-open');
+      burgerButton.classList.remove('is-active');
+      burgerButton.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
+
+// Модальне вікно для розгортання картинок новин
+document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.getElementById('imageModal');
+  const modalImg = modal.querySelector('.image-modal__img');
+  const closeBtn = modal.querySelector('.image-modal__close');
+  const overlay = modal.querySelector('.image-modal__overlay');
+  const newsLinks = document.querySelectorAll('.news__link');
+
+  // Функція для відкриття модального вікна
+  function openModal(imgSrc, imgAlt) {
+    modalImg.src = imgSrc;
+    modalImg.alt = imgAlt;
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden'; // Блокуємо прокрутку сторінки
+  }
+
+  // Функція для закриття модального вікна
+  function closeModal() {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = ''; // Відновлюємо прокрутку сторінки
+  }
+
+  // Додаємо обробники подій для всіх посилань новин
+  newsLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // Запобігаємо переходу за посиланням
+      
+      const img = this.querySelector('.news__img');
+      if (img) {
+        openModal(img.src, img.alt);
+      }
+    });
+  });
+
+  // Закриття модального вікна при кліку на хрестик
+  closeBtn.addEventListener('click', closeModal);
+
+  // Закриття модального вікна при кліку на overlay
+  overlay.addEventListener('click', closeModal);
+
+  // Закриття модального вікна при натисканні Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+
+  // Закриття модального вікна при кліку на саму картинку (опціонально)
+  modalImg.addEventListener('click', function (e) {
+    e.stopPropagation(); // Запобігаємо закриттю при кліку на картинку
+  });
+});
