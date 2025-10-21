@@ -711,7 +711,7 @@
   .tabs__btn {
     position: static;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .tabs__btn-item {
@@ -726,9 +726,43 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+  .tabs__btn {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    justify-items: center;
+  }
+
   .tabs__btn-item {
-    width: 100%;
+    width: 90%;
+    max-width: 150px;
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+
+  .tabs__img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tabs__btn {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    justify-items: center;
+  }
+
+  .tabs__btn-item {
+    width: 95%;
+    max-width: 120px;
+    padding: 3px 4px;
+    font-size: 10px;
+  }
+
+  .tabs__img {
+    width: 24px;
+    height: 24px;
   }
 
   .tabs__content-item {
