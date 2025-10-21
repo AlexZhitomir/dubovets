@@ -1295,6 +1295,11 @@ html {
 }
 /* Мобільні стилі для меню */
 @media (max-width: 992px) {
+  .board .container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
   p,
   address,
   li {
@@ -1430,6 +1435,10 @@ html {
 }
 
 @media (max-width: 768px) {
+  .board .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .menu {
     position: absolute;
     top: 100%;
