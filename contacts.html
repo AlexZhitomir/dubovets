@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="img/icon/logo-1.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Контакти - Дубовець</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a class="logo" href="index.html">
+            <img src="img/icon/dubovets.png" alt="" width="80" />
+          </a>
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="index.html#news" class="menu__link">новини</a>
+              </li>
+              <li class="menu__item">
+                <a href="board.html" class="menu__link">оголошення</a>
+              </li>
+              <li class="menu__item">
+                <a href="index.html#documents" class="menu__link">документи</a>
+              </li>
+              <li class="menu__item">
+                <a href="index.html#admin" class="menu__link"
+                  >органи управління</a
+                >
+              </li>
+              <li class="menu__item">
+                <a href="index.html#map" class="menu__link">карта</a>
+              </li>
+            </ul>
+          </nav>
+          <button
+            class="header__burger"
+            aria-label="Меню"
+            aria-expanded="false"
+            aria-controls="primary-menu"
+          >
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+          </button>
+          <a href="contacts.html" class="header__contacts">контакти</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="contacts">
+        <div class="container">
+          <h1 class="contacts__title">Контакти</h1>
+          <p class="contacts__subtitle">
+            Зв'яжіться з нами для отримання додаткової інформації або залишення
+            ваших побажань
+          </p>
+
+          <div class="contacts__content">
+            <div class="contacts__info">
+              <h2 class="contacts__info-title">Контактна інформація</h2>
+
+              <div class="contacts__item">
+                <h3 class="contacts__position">Голова правління</h3>
+                <p class="contacts__name">Ілляшенко Олександр Анатолійович</p>
+                <p class="contacts__phone">
+                  Телефон: <a href="tel:+380972508433">097-250-84-33</a>
+                </p>
+                <div class="social">
+                  <a
+                    class="social__item"
+                    href="https://www.facebook.com/profile.php?id=100001337059601"
+                  >
+                    <img src="img/icon/fb.svg" height="24px" alt="facebook" />
+                  </a>
+                  <a class="social__item" href="#">
+                    <img src="img/icon/viber.svg" height="24px" alt="viber" />
+                  </a>
+                  <a class="social__item" href="#">
+                    <img src="img/icon/mail.svg" height="24px" alt="mail" />
+                  </a>
+                </div>
+              </div>
+
+              <div class="contacts__item">
+                <h3 class="contacts__position">Бухгалтер</h3>
+                <p class="contacts__name">Павицька Регіна Домініківна</p>
+                <p class="contacts__phone">
+                  Телефон: <a href="tel:+380980881926">098-088-19-26</a>
+                </p>
+              </div>
+
+              <div class="contacts__item">
+                <h3 class="contacts__position">Електрик</h3>
+                <p class="contacts__name">Галманов Олександр Сергійович</p>
+                <p class="contacts__phone">
+                  Телефон: <a href="tel:+380975716882">097-571-68-82</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="contacts__form-wrapper">
+              <h2 class="contacts__form-title">Напишіть нам</h2>
+              <form class="contacts__form" id="contactForm">
+                <div class="form__group">
+                  <label for="name" class="form__label">Ваше ім'я *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form__input"
+                    required
+                    placeholder="Введіть ваше ім'я"
+                  />
+                </div>
+
+                <div class="form__group">
+                  <label for="email" class="form__label">Ваш e-mail *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form__input"
+                    required
+                    placeholder="example@email.com"
+                  />
+                </div>
+
+                <div class="form__group">
+                  <label for="phone" class="form__label">Ваш телефон</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form__input"
+                    placeholder="+380 (XX) XXX-XX-XX"
+                  />
+                </div>
+
+                <div class="form__group">
+                  <label for="subject" class="form__label">Тема *</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    class="form__input"
+                    required
+                    placeholder="Тема повідомлення"
+                  />
+                </div>
+
+                <div class="form__group">
+                  <label for="message" class="form__label"
+                    >Ваше повідомлення *</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form__textarea"
+                    required
+                    placeholder="Опишіть ваше питання або побажання"
+                    rows="5"
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="form__submit">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                  </svg>
+                  Відправити повідомлення
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/contacts.js"></script>
+  </body>
+</html>
