@@ -444,7 +444,7 @@
 }
 
 .docs-card__content {
-  padding: 20px;
+  padding: 10px;
   position: relative;
   z-index: 2;
   background: white;
@@ -527,6 +527,50 @@
 }
 
 /* Адаптивність для новин */
+@media (max-width: 1200px) {
+  .news__item {
+    flex: 0 0 280px;
+  }
+
+  .news__img {
+    height: 180px;
+  }
+
+  .news__content {
+    padding: 18px;
+  }
+
+  .news__item-title {
+    font-size: 17px;
+  }
+
+  .news__item-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 992px) {
+  .news__item {
+    flex: 0 0 260px;
+  }
+
+  .news__img {
+    height: 160px;
+  }
+
+  .news__content {
+    padding: 16px;
+  }
+
+  .news__item-title {
+    font-size: 16px;
+  }
+
+  .news__item-text {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 768px) {
   .news__item {
     flex: 0 0 250px;
@@ -565,23 +609,25 @@
 
 @media (max-width: 480px) {
   .news__item {
-    flex: 0 0 200px;
+    flex: 0 0 180px;
   }
 
   .news__img {
-    height: 120px;
+    height: 100px;
   }
 
   .news__content {
-    padding: 12px;
+    padding: 10px;
   }
 
   .news__item-title {
-    font-size: 14px;
+    font-size: 13px;
+    margin-bottom: 8px;
   }
 
   .news__item-text {
-    font-size: 12px;
+    font-size: 11px;
+    line-height: 1.4;
   }
 }
 
@@ -682,6 +728,13 @@
   font-size: 18px;
 }
 
+.tabs__btn-item--active {
+  background-color: rgba(60, 116, 129, 0.2);
+  border: 5px solid #2d5a63;
+  font-weight: 900;
+  font-size: 18px;
+}
+
 .tabs__content-item {
   margin: 20px 0;
   display: none;
@@ -724,6 +777,63 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+
+  .card {
+    min-height: 220px;
+    max-height: 280px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card__img {
+    height: 140px;
+    object-fit: cover;
+  }
+
+  .card__content {
+    padding: 2px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .card__title {
+    font-size: 18px;
+    margin-bottom: 6px;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+
+  .card__text {
+    font-size: 12px;
+    margin-bottom: 6px;
+    flex-shrink: 0;
+  }
+
+  .card__name {
+    font-size: 11px;
+    margin-bottom: 6px;
+    flex-shrink: 0;
+  }
+
+  .card__tell {
+    font-size: 12px;
+    margin-bottom: 6px;
+    flex-shrink: 0;
+  }
+
+  .card__link {
+    padding: 8px 12px;
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -738,6 +848,26 @@
     max-width: 150px;
     padding: 4px 6px;
     font-size: 12px;
+  }
+
+  .tabs__btn-item:hover {
+    width: 90%;
+    max-width: 150px;
+    padding: 4px 6px;
+    font-size: 12px;
+    background-color: rgba(60, 116, 129, 0.2);
+    border: 5px solid #2d5a63;
+    font-weight: 900;
+  }
+
+  .tabs__btn-item--active {
+    width: 90%;
+    max-width: 150px;
+    padding: 4px 6px;
+    font-size: 12px;
+    background-color: rgba(60, 116, 129, 0.2);
+    border: 5px solid #2d5a63;
+    font-weight: 900;
   }
 
   .tabs__img {
@@ -758,6 +888,26 @@
     max-width: 120px;
     padding: 3px 4px;
     font-size: 10px;
+  }
+
+  .tabs__btn-item:hover {
+    width: 95%;
+    max-width: 120px;
+    padding: 3px 4px;
+    font-size: 10px;
+    background-color: rgba(60, 116, 129, 0.2);
+    border: 5px solid #2d5a63;
+    font-weight: 900;
+  }
+
+  .tabs__btn-item--active {
+    width: 95%;
+    max-width: 120px;
+    padding: 3px 4px;
+    font-size: 10px;
+    background-color: rgba(60, 116, 129, 0.2);
+    border: 5px solid #2d5a63;
+    font-weight: 900;
   }
 
   .tabs__img {
@@ -784,6 +934,57 @@
     grid-template-columns: 1fr;
     gap: 15px;
   }
+
+  .card {
+    min-height: 180px;
+    max-height: 220px;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card__img {
+    height: 100px;
+    object-fit: cover;
+  }
+
+  .card__content {
+    padding: 2px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .card__title {
+    font-size: 16px;
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+
+  .card__text {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .card__name {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .card__tell {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .card__link {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
 }
 
 .card {
@@ -793,6 +994,7 @@
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* Збільшення при наведенні на картку */
@@ -817,27 +1019,36 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
+  min-height: 0;
 }
 .card__title {
-  padding-top: 20px;
-  font-size: 24px;
+  padding-top: 2px;
+  font-size: 18px;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  flex-shrink: 0;
 }
 .card__text {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  flex-shrink: 0;
 }
 
 .card__tell {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: blue;
   font-weight: 700;
-  margin-bottom: 10px;
+  flex-shrink: 0;
 }
 .card__link {
   display: block;
   border: 2px solid #3c7481;
   border-top: 0;
+  padding: 8px 12px;
+  text-align: center;
+  flex-shrink: 0;
+  margin-top: auto;
 }
 
 .documents {
@@ -1385,8 +1596,8 @@ html {
   }
   .documents__list {
     margin: 10px auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
     gap: 20px;
     justify-items: center;
   }
@@ -1435,9 +1646,71 @@ html {
 }
 
 @media (max-width: 768px) {
+  .documents__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
   .board .container {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .card {
+    min-height: 200px;
+    max-height: 250px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card__img {
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .card__content {
+    padding: 2px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .card__title {
+    font-size: 16px;
+    margin-bottom: 4px;
+    line-height: 1.1;
+    flex-shrink: 0;
+  }
+
+  .card__text {
+    font-size: 11px;
+    margin-bottom: 4px;
+    flex-shrink: 0;
+  }
+
+  .card__name {
+    font-size: 10px;
+    margin-bottom: 4px;
+    flex-shrink: 0;
+  }
+
+  .card__tell {
+    font-size: 11px;
+    margin-bottom: 4px;
+    flex-shrink: 0;
+  }
+
+  .card__link {
+    padding: 6px 8px;
+    font-size: 11px;
+    flex-shrink: 0;
+    margin-top: auto;
   }
   .menu {
     position: absolute;
@@ -1867,11 +2140,39 @@ html {
 /* Адаптивність для контактів */
 @media (max-width: 992px) {
   .contacts__content {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
   }
 
-  .contacts__info,
+  .contacts__info {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .contacts__info-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .contacts__position {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .contacts__name {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .contacts__phone {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .social {
+    gap: 10px;
+  }
+
   .contacts__form-wrapper {
     padding: 30px;
   }
