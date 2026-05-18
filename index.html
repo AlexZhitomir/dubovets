@@ -1,753 +1,585 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" type="image/x-icon" href="img/icon/logo-1.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Офіційний сайт Садівницького товариства «Дубовець»: новини, оголошення, документи, органи управління, карта."
     />
-    <title>Дубовець</title>
+    <title>СТ «Дубовець»</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <a class="skip" href="#main">Перейти до вмісту</a>
+
     <header class="header">
-      <div class="container">
-        <div class="header__inner">
-          <a class="logo" href="#">
-            <img src="img/icon/dubovets.png" alt="" width="80" />
-          </a>
-          <nav class="menu">
-            <ul class="menu__list">
-              <li class="menu__item">
-                <a href="#news" class="menu__link">новини</a>
-              </li>
-              <li class="menu__item">
-                <a href="board.html" class="menu__link">оголошення</a>
-              </li>
-              <li class="menu__item">
-                <a href="#documents" class="menu__link">документи</a>
-              </li>
-              <li class="menu__item">
-                <a href="#admin" class="menu__link">органи управління</a>
-              </li>
-              <li class="menu__item">
-                <a href="#map" class="menu__link">карта</a>
-              </li>
-            </ul>
-          </nav>
-          <button
-            class="header__burger"
-            aria-label="Меню"
-            aria-expanded="false"
-            aria-controls="primary-menu"
-          >
-            <span class="burger__line"></span>
-            <span class="burger__line"></span>
-            <span class="burger__line"></span>
-          </button>
-          <a href="contacts.html" class="header__contacts">контакти</a>
+      <div class="container header__inner">
+        <div class="brand">
+          <img
+            class="brand__logo"
+            src="./img/logo.png"
+            width="52"
+            height="52"
+            alt="Логотип СТ «Дубовець»"
+          />
+          <div class="brand__text">
+            <div class="brand__title">Садівницьке товариство «Дубовець»</div>
+            <div class="brand__subtitle">Зелений острів твого комфорту</div>
+          </div>
         </div>
+
+        <nav class="nav" aria-label="Головна навігація">
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="nav__toggleIcon" aria-hidden="true"></span>
+            <span class="nav__toggleText">Меню</span>
+          </button>
+          <div id="navMenu" class="nav__menu">
+            <a href="#news" class="nav__link">Новини</a>
+            <a href="#announcements" class="nav__link">Оголошення</a>
+            <a href="#documents" class="nav__link">Документи</a>
+            <a href="#useful" class="nav__link">Корисне</a>
+            <a href="#management" class="nav__link">Органи управління</a>
+            <a href="#map" class="nav__link">Карта</a>
+          </div>
+        </nav>
       </div>
     </header>
 
-    <main class="main">
-      <section class="about">
-        <div class="container-big">
-          <div class="about__name">
-            <h1 class="about__title">
-              садівницьке товариство
-              <p>"дубовець"</p>
-            </h1>
-            <p class="about__text">маленька праця краща за велике безділля</p>
+    <main id="main">
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__copy">
+            <h1 class="hero__title">Садівницьке товариство «Дубовець»</h1>
+            <p class="hero__lead">маленька праця краща за велике безділля</p>
+            <dl class="stats" aria-label="Ключові показники">
+              <div class="stat">
+                <dt>59,0 га</dt>
+                <dd>площа товариства</dd>
+              </div>
+              <div class="stat">
+                <dt>450+</dt>
+                <dd>членів товариства</dd>
+              </div>
+              <div class="stat">
+                <dt>100+</dt>
+                <dd>підключено до електромережі</dd>
+              </div>
+              <div class="stat">
+                <dt>50+</dt>
+                <dd>підключено до газової мережі</dd>
+              </div>
+            </dl>
           </div>
-          <dl class="about__stat">
-            <div class="about__stat-item">
-              <dt>59,0 га</dt>
-              <dd>площа товариства</dd>
+
+          <div class="hero__panel" role="region" aria-label="Швидкий пошук">
+            <div class="panelTitle">Швидкий пошук</div>
+            <p class="panelHint">
+              Шукайте по новинах, дошці оголошень та корисній інформації.
+            </p>
+            <label class="field">
+              <span class="field__label">Запит</span>
+              <input
+                id="searchInput"
+                class="field__input"
+                type="search"
+                placeholder="Напр.: оплата, вода, збори…"
+                autocomplete="off"
+              />
+            </label>
+            <div class="filters" role="group" aria-label="Фільтр пошуку">
+              <label class="chip">
+                <input type="radio" name="scope" value="all" checked />
+                <span>Усе</span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="scope" value="news" />
+                <span>Новини</span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="scope" value="ann" />
+                <span>Дошка</span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="scope" value="useful" />
+                <span>Корисне</span>
+              </label>
             </div>
-            <div class="about__stat-item">
-              <dt>300 +</dt>
-              <dd>членів товариства</dd>
+            <div class="hero__meta">
+              <div class="metaItem">
+                <div class="metaItem__k">Оновлено</div>
+                <div class="metaItem__v" id="lastUpdated">—</div>
+              </div>
+              <div class="metaItem">
+                <div class="metaItem__k">Матеріалів</div>
+                <div class="metaItem__v" id="itemsCount">—</div>
+              </div>
             </div>
-            <div class="about__stat-item">
-              <dt>100 +</dt>
-              <dd>підключено до електромережі</dd>
-            </div>
-            <div class="about__stat-item">
-              <dt>50 +</dt>
-              <dd>підключено до газової мережі</dd>
-            </div>
-          </dl>
+          </div>
         </div>
       </section>
 
-      <!--НОВИНИ -->
-      <section class="news">
+      <section id="news" class="section">
         <div class="container">
-          <h3 id="news" class="news__title section-anchor">новини</h3>
-          <div class="news__slider">
-            <div class="news__track">
-              <div class="news__item">
-                <a href="#" class="news__link">
-                  <img
-                    src="img/board/cell-1.jpg"
-                    alt="Новина 1"
-                    class="news__img"
-                  />
-                  <div class="news__content">
-                    <h4 class="news__item-title">
-                      масштабний благодійний гастрофестиваль «БЕРЕЗІВСЬКА
-                      ГОСТИНА»!
-                    </h4>
-                    <p class="news__item-text">
-                      Відчуйте сучасний смак традиційної української кухні та
-                      підтримайте своїм донатом ЗСУ!
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="news__item">
-                <a href="#" class="news__link">
-                  <img
-                    src="img/board/cell-2.png"
-                    alt="Новина 2"
-                    class="news__img"
-                  />
-                  <div class="news__content">
-                    <h4 class="news__item-title">Заголовок новини 2</h4>
-                    <p class="news__item-text">
-                      Короткий опис новини з важливою інформацією для членів
-                      товариства
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="news__item">
-                <a href="#" class="news__link">
-                  <img
-                    src="img/board/cell-3.png"
-                    alt="Новина 3"
-                    class="news__img"
-                  />
-                  <div class="news__content">
-                    <h4 class="news__item-title">Заголовок новини 3</h4>
-                    <p class="news__item-text">
-                      Короткий опис новини з важливою інформацією для членів
-                      товариства
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="news__item">
-                <a href="#" class="news__link">
-                  <img
-                    src="img/board/cell-4.png"
-                    alt="Новина 4"
-                    class="news__img"
-                  />
-                  <div class="news__content">
-                    <h4 class="news__item-title">Заголовок новини 4</h4>
-                    <p class="news__item-text">
-                      Короткий опис новини з важливою інформацією для членів
-                      товариства
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="news__item">
-                <a href="#" class="news__link">
-                  <img
-                    src="img/board/cell-5.png"
-                    alt="Новина 5"
-                    class="news__img"
-                  />
-                  <div class="news__content">
-                    <h4 class="news__item-title">Заголовок новини 5</h4>
-                    <p class="news__item-text">
-                      Короткий опис новини з важливою інформацією для членів
-                      товариства
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="news__item">
-                <a href="#" class="news__link">
-                  <img
-                    src="img/board/cell-6.png"
-                    alt="Новина 6"
-                    class="news__img"
-                  />
-                  <div class="news__content">
-                    <h4 class="news__item-title">Заголовок новини 6</h4>
-                    <p class="news__item-text">
-                      Короткий опис новини з важливою інформацією для членів
-                      товариства
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="news__item">
-                <a href="#" class="news__link">
-                  <img
-                    src="img/board/cell-7.png"
-                    alt="Новина 7"
-                    class="news__img"
-                  />
-                  <div class="news__content">
-                    <h4 class="news__item-title">Заголовок новини 7</h4>
-                    <p class="news__item-text">
-                      Короткий опис новини з важливою інформацією для членів
-                      товариства
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="news__item">
-                <a href="#" class="news__link">
-                  <img
-                    src="img/board/cell-8.png"
-                    alt="Новина 8"
-                    class="news__img"
-                  />
-                  <div class="news__content">
-                    <h4 class="news__item-title">Заголовок новини 8</h4>
-                    <p class="news__item-text">
-                      Короткий опис новини з важливою інформацією для членів
-                      товариства
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="news__item">
-                <a href="#" class="news__link">
-                  <img
-                    src="img/board/cell-9.png"
-                    alt="Новина 9"
-                    class="news__img"
-                  />
-                  <div class="news__content">
-                    <h4 class="news__item-title">Заголовок новини 9</h4>
-                    <p class="news__item-text">
-                      Короткий опис новини з важливою інформацією для членів
-                      товариства
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="news__item">
-                <a href="#" class="news__link">
-                  <img
-                    src="img/board/cell-10.png"
-                    alt="Новина 10"
-                    class="news__img"
-                  />
-                  <div class="news__content">
-                    <h4 class="news__item-title">Заголовок новини 10</h4>
-                    <p class="news__item-text">
-                      Короткий опис новини з важливою інформацією для членів
-                      товариства
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <button
-              class="news__btn news__btn--prev"
-              aria-label="Попередня новина"
-            >
-              ‹
-            </button>
-            <button
-              class="news__btn news__btn--next"
-              aria-label="Наступна новина"
-            >
-              ›
-            </button>
+          <div class="section__head">
+            <h2 class="section__title">Новини</h2>
+            <p class="section__subtitle">
+              Актуальна інформація про життя нашого садового товариства
+            </p>
+          </div>
+
+          <div
+            class="cards"
+            id="newsList"
+            data-kind="news"
+            aria-live="polite"
+          ></div>
+          <div class="empty" id="newsEmpty" hidden>
+            Немає новин за вашим запитом.
           </div>
         </div>
       </section>
 
-      <!--ВНЕСКИ -->
-      <div class="container">
-        <div class="pay">
-          <h3 class="list">внески</h3>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>назва</th>
-                <th>розмір</th>
-                <th>термін сплати</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>членський внесок</td>
-                <td>50 грн / сотку - щорічно</td>
-                <td>
-                  за перше півріччя - до 30 березня <br />за друге півріччя - до
-                  30 вересня
-                </td>
-              </tr>
-              <tr>
-                <td>вступний внесок</td>
-                <td>1000 грн - разово</td>
-                <td>при прийнятті в члени товариства</td>
-              </tr>
-              <tr>
-                <td>цільовий внесок на розвиток Товариства</td>
-                <td>300 грн - разово</td>
-                <td>при прийнятті в члени товариства</td>
-              </tr>
-              <tr>
-                <td>внесок за переоформлення земельних ділянок</td>
-                <td>
-                  100 грн - разово<br />
-                  -0 грн - між родичами (спадкоємцями)-
-                </td>
-                <td>при поданні відповідної заяви про переоформлення</td>
-              </tr>
-              <tr>
-                <td>плата за підключення до енергомережі</td>
-                <td>
-                  350 грн (однофазний) <br />
-                  700 грн (трьохфазний)
-                </td>
-                <td>при поданні відповідної заяви</td>
-              </tr>
-              <tr>
-                <td>за утримання КТП та техобслуговування</td>
-                <td>150 грн - щорічно</td>
-                <td>до 01 квітня</td>
-              </tr>
-              <tr>
-                <td>за втрати по трансформатору</td>
-                <td>80 грн - щорічно</td>
-                <td>до 01 квітня</td>
-              </tr>
-              <tr>
-                <td>оплата за електроенергію</td>
-                <td>4,32 грн з ПДВ / 1 кВт</td>
-                <td>до 5-го числа наступного за звітним місяцем</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="bank">
-            <img src="img/rekv.png" alt="QR-код" width="800" height="400" />
-            <img src="img/pay.svg" alt="QR-код" width="400" height="400" />
-          </div>
-        </div>
-      </div>
-
-      <!--ДОШКА ОГОЛОШЕНЬ -->
-      <section class="board">
+      <section id="announcements" class="section section--alt">
         <div class="container">
-          <h3 class="board__title">
-            <a href="board.html">дошка оголошень</a>
-            <marquee
-              behavior="scroll"
-              direction="left"
-              style="font-size: 20px; color: red"
-              >Продам корову. Деталі за телефоном 099-999-99-99. Адам.</marquee
-            >
-          </h3>
-          <h4 class="board__about">
-            Тут ви можете передивитись оголошення, які створили садоводи
-          </h4>
+          <div class="section__head">
+            <h2 class="section__title">Дошка оголошень</h2>
+            <p class="section__subtitle">
+              Сусідський майданчик: оголошення від садоводів та для садоводів
+            </p>
+          </div>
 
-          <a href="board.html">
-            <div class="pred__board">
-              <img
-                class="board-preview__img"
-                src="img/board/cell-1.png"
-                alt=""
-              />
-              <img
-                class="board-preview__img"
-                src="img/board/cell-2.png"
-                alt=""
-              />
-              <img
-                class="board-preview__img"
-                src="img/board/cell-3.png"
-                alt=""
-              />
-              <img
-                class="board-preview__img"
-                src="img/board/cell-4.png"
-                alt=""
-              />
-              <img
-                class="board-preview__img"
-                src="img/board/cell-5.png"
-                alt=""
-              />
-              <img
-                class="board-preview__img"
-                src="img/board/cell-6.png"
-                alt=""
-              />
-              <img
-                class="board-preview__img"
-                src="img/board/cell-7.png"
-                alt=""
-              />
-              <img
-                class="board-preview__img"
-                src="img/board/cell-8.png"
-                alt=""
-              />
-              <img
-                class="board-preview__img"
-                src="img/board/cell-9.png"
-                alt=""
-              />
-              <img
-                class="board-preview__img"
-                src="img/board/cell-10.png"
-                alt=""
-              />
-              <img
-                class="board-preview__img"
-                src="img/board/cell-11.png"
-                alt=""
-              />
-              <img
-                class="board-preview__img"
-                src="img/board/cell-12.png"
-                alt=""
-              />
-              <img
-                class="board-preview__img"
-                src="img/board/cell-13.png"
-                alt=""
-              />
-              <img
-                class="board-preview__img"
-                src="img/board/cell-14.png"
-                alt=""
-              />
+          <div
+            class="boardTools"
+            role="region"
+            aria-label="Фільтри дошки оголошень"
+          >
+            <div class="boardTools__label">Категорія</div>
+            <div
+              class="filters"
+              id="adCategories"
+              role="group"
+              aria-label="Категорії"
+            ></div>
+            <div class="boardTools__actions">
+              <button
+                class="button button--primary"
+                type="button"
+                data-ad-request-open="1"
+              >
+                Зворотний зв’язок
+              </button>
             </div>
-          </a>
-          <h4 class="board__about">
-            З питань розміщення оголошення звертайтесь за телефоном
-            097-250-84-33
-          </h4>
+          </div>
+
+          <div
+            class="cards"
+            id="annList"
+            data-kind="ann"
+            aria-live="polite"
+          ></div>
+          <div class="empty" id="annEmpty" hidden>
+            Немає оголошень за вашим запитом.
+          </div>
         </div>
       </section>
 
-      <!--ДОКУМЕНТИ -->
-      <div class="container">
-        <section class="documents">
-          <h3 id="documents" class="list section-anchor">документи</h3>
-          <div class="documents__list">
-            <div class="documents__item">
-              <h4 class="documents__name">статут</h4>
-              <a class="documents__img" href="#!">
-                <img
-                  src="img/doc/statut.png"
-                  alt="статут"
-                  style="width: 100%"
-                />
-              </a>
-              <a href="documents/statut.pdf" download class="download-btn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
-                </svg>
-                Скачати
-              </a>
-            </div>
-
-            <div class="documents__item">
-              <h4 class="documents__name">правила товариства (проект)</h4>
-              <a class="documents__img" href="#!">
-                <img
-                  src="img/doc/rules.png"
-                  alt="правила"
-                  style="width: 100%"
-                />
-              </a>
-              <a href="documents/rules.pdf" download class="download-btn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
-                </svg>
-                Скачати
-              </a>
-            </div>
-
-            <div class="documents__item">
-              <h4 class="documents__name">
-                правила енерго-господарства (проект)
-              </h4>
-              <a class="documents__img" href="#!">
-                <img
-                  src="img/doc/electric.png"
-                  alt="правила електрик"
-                  style="width: 100%"
-                />
-              </a>
-              <a href="documents/electric.pdf" download class="download-btn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
-                </svg>
-                Скачати
-              </a>
-            </div>
-
-            <div class="documents__item">
-              <h4 class="documents__name">документи</h4>
-              <a class="documents__img" href="#!">
-                <img
-                  src="img/doc/documents.png"
-                  alt="документи"
-                  style="width: 100%"
-                />
-              </a>
-              <a href="documents.html" class="download-btn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
-                  />
-                </svg>
-                Перейти
-              </a>
-            </div>
+      <section id="documents" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">Документи</h2>
+            <p class="section__subtitle">
+              Прозорість нашої роботи: звіти, рішення та правила
+            </p>
           </div>
-        </section>
-      </div>
 
-      <!--ОРГАНИ УПРАВЛІННЯ -->
-      <div class="container">
-        <h3 id="admin" class="title section-anchor">органи управління</h3>
-        <div class="people">
-          <div class="people__item">
-            <img
-              class="people__icon"
-              src="img/icon/admin.png"
-              alt="Адміністрація"
-            />
-            <h4 class="people__title">Адміністрація</h4>
-            <div class="people__text">
-              <h3 class="people__position">голова правління</h3>
-              <p>
-                <span class="people__name"> Ілляшенко </span> Олександр
-                Анатолійович
-              </p>
-              <p>
-                <span class="people__telephone"> телефон: </span> 097-250-84-33
-              </p>
+          <div class="grid">
+            <article class="doc">
+              <div class="doc__title">Статут СТ «Дубовець»</div>
+              <div class="doc__meta">PDF • актуальна редакція</div>
+              <a class="doc__link" href="./docs/statut.pdf" download
+                >Завантажити</a
+              >
+            </article>
+            <article class="doc">
+              <div class="doc__title">Розмір внесків</div>
+              <div class="doc__meta">PDF • оновлено</div>
+              <button
+                class="doc__link"
+                type="button"
+                data-doc-open="1"
+                data-id="doc-fees"
+              >
+                Переглянути
+              </button>
+            </article>
+            <article class="doc">
+              <div class="doc__title">Протоколи загальних зборів</div>
+              <div class="doc__meta">Архів • PDF</div>
+              <button
+                class="doc__link"
+                type="button"
+                data-doc-open="1"
+                data-id="doc-protocols"
+              >
+                Переглянути
+              </button>
+            </article>
+            <article class="doc">
+              <div class="doc__title">
+                Правила внутрішнього розпорядку Товариства
+              </div>
+              <div class="doc__meta">PDF • проект</div>
+              <a class="doc__link" href="./docs/rules.pdf" download
+                >Завантажити</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
 
-              <div class="social">
+      <section id="useful" class="section section--alt">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">Корисне</h2>
+            <p class="section__subtitle">Знання, що стануть у пригоді</p>
+          </div>
+
+          <div class="grid">
+            <article class="doc">
+              <div class="doc__title">Реквізити для оплати внесків</div>
+              <div class="doc__meta">Оплата • призначення • контакти</div>
+              <a class="doc__link" href="#" data-show-image="./img/rekv.png"
+                >Переглянути</a
+              >
+            </article>
+            <article class="doc">
+              <div class="doc__title">Графік маршруток</div>
+              <div class="doc__meta">Розклад • автобус • час</div>
+              <button
+                class="doc__link"
+                type="button"
+                data-doc-open="1"
+                data-id="doc-bus-schedule"
+              >
+                Переглянути
+              </button>
+            </article>
+            <article class="doc">
+              <div class="doc__title">Правила догляду за полуницею</div>
+              <div class="doc__meta">догляд • полуниця • поради</div>
+              <a
+                class="doc__link"
+                href="#"
+                data-show-image="./img/useful/strawberry.jpg"
+                >Переглянути</a
+              >
+            </article>
+            <article class="doc">
+              <div class="doc__title">Правила догляду за тваринами</div>
+              <div class="doc__meta">Гігієна • безпека • сусіди</div>
+              <a
+                class="doc__link"
+                href="#"
+                aria-disabled="true"
+                onclick="event.preventDefault()"
+                >Переглянути</a
+              >
+            </article>
+          </div>
+          <div class="empty" id="usefulEmpty" hidden>
+            Немає корисної інформації за вашим запитом.
+          </div>
+        </div>
+      </section>
+
+      <section id="management" class="section section--alt">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">Органи управління</h2>
+            <p class="section__subtitle">Контакти та відповідальні особи</p>
+          </div>
+
+          <div class="people">
+            <article class="person">
+              <div class="person__role">Голова правління</div>
+              <div class="person__name">
+                ПІБ: <span class="muted">Ілляшенко Олександр Анатолійович</span>
+              </div>
+              <div class="person__row">
+                <span class="muted">Телефон:</span>
+                <a href="tel:+380972508433">+38 (097) 250-84-33</a>
+              </div>
+              <div class="person__row">
+                <span class="muted">Email:</span>
+                <a href="mailto:i0a@ukr.net">i0a@ukr.net</a>
+              </div>
+              <div class="person__icons" aria-label="Контакти голови правління">
                 <a
-                  class="social__item"
-                  href="https://www.facebook.com/profile.php?id=100001337059601"
+                  class="iconLink"
+                  href="mailto:i0a@ukr.net"
+                  aria-label="Написати листа"
                 >
-                  <img src="img/icon/fb.svg" height="24px" alt="facebook" />
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"
+                    />
+                  </svg>
                 </a>
-
                 <a
-                  class="social__item"
-                  href="viber://chat?number=+380972508433"
+                  class="iconLink"
+                  href="viber://chat?number=%2B380972508433"
+                  aria-label="Написати у Viber"
                 >
-                  <img src="img/icon/viber.svg" height="24px" alt="viber" />
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M20.5 3.5c-1.4-1.4-4.6-2-8.5-2S4.9 2.1 3.5 3.5C2.1 4.9 1.5 8.1 1.5 12c0 1.8.2 3.4.6 4.8.3 1.1 1.2 2 2.3 2.3 1.4.4 3 .6 4.8.6.5 0 1 0 1.5-.1l3.2 2.1c.7.5 1.6-.1 1.6-1V20c2.4-.4 4.3-1.1 5.6-2.4 1.4-1.4 2-4.6 2-8.5s-.6-7.1-2-8.5Zm-5.6 12.2c-.3.5-.8.8-1.4.8-1.2 0-2.6-.6-4-1.8-1.2-1.1-2-2.3-2.4-3.6-.2-.6-.1-1.2.3-1.7l.6-.7c.3-.3.8-.3 1.1 0l1 1c.3.3.3.7.1 1l-.3.5c.3.6.7 1.1 1.2 1.6.6.5 1.2.9 1.8 1.1l.4-.3c.3-.2.7-.2 1 .1l1.1 1.1c.3.3.3.8 0 1.1l-.5.5Z"
+                    />
+                  </svg>
                 </a>
-
-                <a class="social__item" href="mailto:i0ak@ukr.net">
-                  <img src="img/icon/mail.svg" height="24px" alt="mail" />
+                <a
+                  class="iconLink"
+                  href="https://www.facebook.com/oleksandr.illasenko.2025"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Відкрити Facebook"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.9.2-1.5 1.6-1.5h1.7V5c-.3 0-1.5-.1-2.8-.1-2.8 0-4.6 1.7-4.6 4.8V11H7v3h2.7v8h3.8Z"
+                    />
+                  </svg>
                 </a>
               </div>
+            </article>
 
-              <br />
-              <h3 class="people__position">бухгалтер</h3>
-              <p>
-                <span class="people__name"> Павицька </span> Регіна Домініківна
-              </p>
-              <p>
-                <span class="people__telephone"> телефон: </span> 098-088-19-26
-              </p>
-              <br />
+            <article class="person">
+              <div class="person__role">Бухгалтер</div>
+              <div class="person__name">
+                ПІБ: <span class="muted">Павицька Регіна Домініківна</span>
+              </div>
+              <div class="person__row">
+                <span class="muted">Телефон:</span>
+                <a href="tel:+380980881926">+38 (098) 088-19-26</a>
+              </div>
+            </article>
 
-              <h3 class="people__position">електрик</h3>
-              <p>
-                <span class="people__name"> Галманов </span> Олександр
-                Сергійович
-              </p>
-              <p>
-                <span class="people__telephone"> телефон: </span> 097-571-68-82
-              </p>
-              <br />
-            </div>
+            <article class="person">
+              <div class="person__role">Електрик</div>
+              <div class="person__name">
+                ПІБ: <span class="muted">Галманов Олександр Сергійович</span>
+              </div>
+              <div class="person__row">
+                <span class="muted">Телефон:</span>
+                <a href="tel:+380975716882">+38 (097) 571-68-82</a>
+              </div>
+            </article>
+
+            <article class="person">
+              <div class="person__role">Правління</div>
+              <div class="person__name">Склад правління</div>
+              <div class="person__actions">
+                <button class="linkBtn" type="button" data-revision-open="1">
+                  Переглянути
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="map" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">Карта</h2>
+            <p class="section__subtitle">
+              Розташування Садівницького товариства «Дубовець».
+            </p>
           </div>
 
-          <div class="people__item">
-            <img class="people__icon" src="img/icon/rule.png" alt="правління" />
-            <h4 class="people__title">правління</h4>
-            <div class="people__text">
-              <ul>
+          <div class="map">
+            <div class="map__embed" role="region" aria-label="Мапа (вбудована)">
+              <iframe
+                title="Карта СТ «Дубовець»"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=50.355501,28.423503&z=12&output=embed"
+              ></iframe>
+            </div>
+            <div class="map__side">
+              <div class="panelTitle">Корисні посилання</div>
+              <ul class="list">
                 <li>
-                  <p>
-                    <span class="people__name"> Авдіюк Олександр Олегович</span>
-                  </p>
-                </li>
-
-                <li>
-                  <p>
-                    <span class="people__name">
-                      Бондаренко Олексій Анатолійович</span
-                    >
-                  </p>
-                </li>
-
-                <li>
-                  <p>
-                    <span class="people__name"> Борисюк Микола Григорович</span>
-                  </p>
-                </li>
-
-                <li>
-                  <p>
-                    <span class="people__name"> Власюк Ярослав Іванович</span>
-                  </p>
-                </li>
-
-                <li>
-                  <p>
-                    <span class="people__name"> Іць Володимир Васильович</span>
-                  </p>
-                </li>
-
-                <li>
-                  <p>
-                    <span class="people__name"> Корень Галина Олексіївна </span>
-                  </p>
-                </li>
-
-                <li>
-                  <p>
-                    <span class="people__name"> Кулик Леся Олександрівна </span>
-                  </p>
+                  схема ділянок
+                  <a href="./img/map/schema.pdf" download> завантажити </a>
                 </li>
                 <li>
-                  <p>
-                    <span class="people__name"> Кучер Людмила Євгенівна </span>
-                  </p>
+                  схема доріг
+                  <a href="./img/map/road.pdf" download> завантажити </a>
                 </li>
                 <li>
-                  <p>
-                    <span class="people__name">
-                      Павицька Регіна Домініківна
-                    </span>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <span class="people__name">
-                      Смольницька Олена Василівна
-                    </span>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <span class="people__name">
-                      Томашевський Геннадій Анатолійович
-                    </span>
-                  </p>
+                  вільні ділянки
+                  <a href="./img/map/free.xlsx" download> завантажити </a>
                 </li>
               </ul>
-            </div>
-          </div>
-
-          <div class="people__item">
-            <img
-              class="people__icon"
-              src="img/icon/revizor.png"
-              alt="ревізійна комісія"
-            />
-            <h4 class="people__title">ревізійна комісія</h4>
-            <div class="people__text">
-              <ul>
+              <div class="panelTitle" style="margin-top: 20px">
+                Ділянки товариства
+              </div>
+              <ul class="list">
                 <li>
-                  <p>
-                    <span class="people__name"
-                      >Костюченко Валентина Ананіївна</span
-                    >
-                  </p>
-
-                  <br />
+                  <button
+                    class="linkBtn"
+                    type="button"
+                    data-modal-open="freePlots"
+                  >
+                    вільні ділянки
+                  </button>
                 </li>
                 <li>
-                  <p>
-                    <span class="people__name"
-                      >Одинецький Анатолій Петрович</span
-                    >
-                  </p>
-
-                  <br />
+                  <button
+                    class="linkBtn"
+                    type="button"
+                    data-modal-open="debtors"
+                    style="color: red"
+                  >
+                    боржники
+                  </button>
                 </li>
-
-                <li>
-                  <p>
-                    <span class="people__name">
-                      Танська Валентина Олексіївна</span
-                    >
-                  </p>
-
-                  <br />
-                </li>
-              </ul>
-            </div>
+              </ul>            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!--КАРТА -->
-      <div class="container">
-        <div class="box">
-          <h3 id="map" class="list section-anchor">карта</h3>
-          <div class="map-container">
-            <div class="overlay" onclick="style.pointerEvents='none'"></div>
-            <iframe
-              src="https://maps.visicom.ua/iframe/uk/1300:500/?c/28.42755:50.35250:15/"
-              width="1300"
-              height="500"
-              scrolling="no"
-              frameborder="0"
-              allowfullscreen="0"
-              loading="lazy"
-              title="карта"
-            ></iframe>
-            <h4 class="map-overlay-text">
-              для керування картою нажміть на клавішу мишки
-            </h4>
-          </div>
-          <div class="map-download-container">
-            <img src="img/map.jpg" alt="карта" style="width: 100%" />
-            <div class="map-download-btn-wrapper">
-              <a href="img/map.jpg" download class="download-btn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
-                </svg>
-                Скачати карту
-              </a>
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div class="footer__left">
+            <div class="footer__brand">СТ «Дубовець»</div>
+            <div class="footer__muted">
+              © <span id="year"></span> • Офіційний сайт
             </div>
           </div>
+          <div class="footer__right">
+            <a class="footer__link" href="#main">Вгору</a>
+            <a class="footer__link" href="#documents">Документи</a>
+            <a class="footer__link" href="#useful">Корисне</a>
+            <a class="footer__link" href="#management">Контакти</a>
+          </div>
         </div>
-      </div>
+      </footer>
     </main>
 
-    <!-- Модальне вікно для розгортання картинки -->
-    <div id="imageModal" class="image-modal">
-      <div class="image-modal__overlay"></div>
-      <div class="image-modal__content">
-        <button class="image-modal__close" aria-label="Закрити">&times;</button>
-        <img class="image-modal__img" src="" alt="" />
-      </div>
+    <!-- Контейнери для модальних таблиць -->
+    <div id="freePlotsData" style="display: none">
+      <table class="modalTable">
+        <tbody id="freePlotsTable">
+          <tr>
+            <td>9</td>
+            <td>26</td>
+            <td>81</td>
+            <td>118</td>
+            <td>121</td>
+            <td>190</td>
+            <td>202</td>
+            <td>213</td>
+          </tr>
+          <tr>
+            <td>251</td>
+            <td>252</td>
+            <td>256</td>
+            <td>258</td>
+            <td>268</td>
+            <td>274</td>
+            <td>275</td>
+            <td>290</td>
+
+            <!-- і так далі... -->
+          </tr>
+          <tr>
+            <td>291</td>
+            <td>292</td>
+            <td>296</td>
+            <td>308</td>
+            <td>328</td>
+            <td>350</td>
+            <td>351а</td>
+            <td>352</td>
+          </tr>
+          <tr>
+            <td>353</td>
+            <td>366</td>
+            <td>367</td>
+            <td>376</td>
+            <td>377</td>
+            <td>400</td>
+            <td>412</td>
+            <td>418</td>
+          </tr>
+          <tr>
+            <td>499</td>
+            <td>622</td>
+            <td>643</td>
+            <td>658</td>
+            <td>675</td>
+            <td>716</td>
+            <td>754</td>
+            <td>755</td>
+          </tr>
+          <tr>
+            <td>757</td>
+            <td>758</td>
+            <td>763</td>
+            <td>764</td>
+            <td>766</td>
+            <td>769</td>
+            <td>770</td>
+            <td>775</td>
+          </tr>
+          <tr>
+            <td>776</td>
+            <td>777</td>
+            <td>780</td>
+           
+          </tr>
+          <!-- Номера вільних ділянок внести сюди -->
+        </tbody>
+      </table>
     </div>
 
-    <script src="js/main.js"></script>
+    <div id="debtorsData" style="display: none">
+      <table class="modalTable">
+        <tbody id="debtorsTable">
+          <tr>
+            <td>15</td>
+            <td>23</td>
+            <td>45</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <dialog class="modal" id="modal">
+      <form method="dialog" class="modal__card">
+        <div class="modal__head">
+          <div class="modal__title" id="modalTitle">—</div>
+          <button class="iconBtn" type="submit" aria-label="Закрити">✕</button>
+        </div>
+        <div class="modal__meta" id="modalMeta">—</div>
+        <div class="modal__body" id="modalBody"></div>
+        <div class="modal__foot">
+          <button class="button button--primary" type="submit">Закрити</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="./script.js" defer></script>
   </body>
 </html>
